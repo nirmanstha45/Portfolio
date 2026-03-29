@@ -801,7 +801,9 @@ footer {
     }
 
     .btn {
-        width: 100%;
+        display: flex !important;
+        width: 100% !important;
+        box-sizing: border-box;
         justify-content: center;
         text-align: center;
     }
