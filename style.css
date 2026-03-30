@@ -30,6 +30,8 @@ html {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-body);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -757,7 +759,7 @@ footer {
     }
 
     .nav-links {
-        display: none;
+        display: flex;
         position: absolute;
         top: 100%;
         left: 0;
@@ -767,10 +769,16 @@ footer {
         padding: 20px 0;
         border-bottom: 1px solid var(--border-color);
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
     }
 
     .nav-links.active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
     
     .nav-links a {
@@ -785,6 +793,10 @@ footer {
     .stats-grid {
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+    }
+
+    .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
